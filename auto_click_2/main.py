@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 import json
 import keyboard
+import webbrowser
 # minhas
 from tl_click import Window_click_config
 from tl_hotkey import Window_hot_key_config
@@ -162,8 +163,7 @@ class App(tk.Tk):
         # 3
         help = tk.Menu(menu_principal, tearoff=False)
         # 3.1 e 3.2
-        help.add_command(label='How to automate a sequence of mouse clicks and keystrokes',
-                         command=lambda: print('How to automate a sequence of mouse clicks and keystrokes'))
+        help.add_command(label='How to automate a sequence of mouse clicks and keystrokes', command=lambda: print('How to automate a sequence of mouse clicks and keystrokes'))
         help.add_command(label='About', command=lambda: print('About'))
         # conectando tudo
         menu_principal.add_cascade(label='Help', menu=help)
@@ -173,8 +173,7 @@ class App(tk.Tk):
         # cria os dois botoes do menu
         ttk.Button(self, textvariable=self.hotkey_button_text_str, command=lambda: Window_hot_key_config(
             self, self.janela_secundaria_aberta, self.hot_key, self.att_text_hotkey_button)).place(x=15, y=13, width=202, height=35)
-        ttk.Button(self, text='Help >>').place(
-            x=15, y=61, width=202, height=35)
+        ttk.Button(self, text='Help >>', command= lambda:webbrowser.open("https://www.youtube.com/@TimelapseCoderYT/videos")).place(x=15, y=61, width=202, height=35)
         # atualiza o texto do botao Hot key
         self.att_text_hotkey_button()
         # ativa a bind do macro

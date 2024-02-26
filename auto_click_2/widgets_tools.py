@@ -73,7 +73,7 @@ class Alerta_entry(tk.Toplevel):
         canvas.create_line(x1, y1 + raio, x1, y2 - raio, width=grosura)
         canvas.create_line(x2, y1 + raio, x2, y2 - raio, width=grosura)
 
-        image_pil = Image.open('x.png')
+        image_pil = Image.open('auto_click_2/data_img/x.png')
         image_pil_resized = image_pil.resize((20, 20))
         image = ImageTk.PhotoImage(image_pil_resized)
         canvas.create_image(25, 20, anchor='center', image=image)

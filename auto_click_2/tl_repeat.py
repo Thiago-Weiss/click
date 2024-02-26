@@ -76,31 +76,13 @@ class Window_repeat_config(Top_level_master):
         ttk.Button(self.frame_widgets, text='Ok', command=lambda: self.fechar_janela(True), width=8).grid(row=4, column=1,  sticky='e', padx=16, ipady=3)
         ttk.Button(self.frame_widgets, text='Cancel', command=self.fechar_janela, width=8).grid(row=4, column=2,  sticky='w', padx=16, ipady=3)
 
-    def tirar_alerta_digitacao(self, *args):
-        self.on_focus_out(())
-        self.digitou_errado.set(False)
 
-    def alerta_digitou_errado(self):
-        if self.digitou_errado.get() == False:
-            self.digitou_errado.set(True)
-            x = self.winfo_rootx()
-            y = self.winfo_rooty()
-            self.mensagem_erro = Alerta_entry(self, x+210, y+50, self.digitou_errado)
-
-    def validar_repeat(self, value):
-        validade = (value.isdigit() and len(value) <= 6) or value == ''
-        if validade:
-            self.digitou_errado.set(False)
-            return True
-        else:
-            self.bell()
-            if len(value) <= 6:
-                self.after(10, self.alerta_digitou_errado)
-            return False
 
     def validar_time(self, value):
+        # faz a validaçao do entry
         validade = (value.isdigit() and len(value) <= 4) or value == ''
         if validade:
+            # tira o alerta de erro se digiti certo
             self.digitou_errado.set(False)
             return True
         else:
@@ -108,6 +90,37 @@ class Window_repeat_config(Top_level_master):
             if len(value) <= 4:
                 self.after(10, self.alerta_digitou_errado)
             return False
+
+    def validar_repeat(self, value):
+        # faz a validaçao do entry
+        validade = (value.isdigit() and len(value) <= 6) or value == ''
+        if validade:
+            # tira o alerta de erro se digiti certo
+            self.digitou_errado.set(False)
+            return True
+        else:
+            self.bell()
+            if len(value) <= 6:
+                self.after(10, self.alerta_digitou_errado)
+            return False
+        
+    def alerta_digitou_errado(self):
+        # coloca o alerta de erro
+        if self.digitou_errado.get() == False:
+            self.digitou_errado.set(True)
+            x = self.winfo_rootx()
+            y = self.winfo_rooty()
+            self.mensagem_erro = Alerta_entry(self, x+210, y+50, self.digitou_errado)
+
+    def tirar_alerta_digitacao(self, *args):
+        # tira o alerta de erro depois de um tempo
+        self.on_focus_out(())
+        self.digitou_errado.set(False)
+        
+    def start_move(self, event):
+        # chama a funçao original e chama a funcao de tirar o alerta de erro
+        super().start_move(event)
+        self.tirar_alerta_digitacao()
 
     def fechar_janela(self, salvar=False):
         # salva a nova hot key
