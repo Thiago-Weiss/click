@@ -35,3 +35,7 @@ Obs.: Aprendi muito sobre Tkinter com [este vídeo](https://www.youtube.com/watc
 ## Realidade
 - #aprendizado
 - Consegui fazer um clone muito bom do GS Auto Clicker, de forma que, ao usar, fica muito difícil saber qual é qual.
+
+## Comparativo
+A minha versão é a com a estrela 100% amarela
+(1.png)
