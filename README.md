@@ -15,7 +15,7 @@ Escolhi clonar o GS Auto Clicker porque é um aplicativo existente que eu já us
 - **finish**: Código fonte da segunda versão usando POO.
 
 ## Sobre o aplicativo
-Para usar, baixe a pasta `for use` e execute o aplicativo. Comparado ao original, ele tem todas as funcionalidades, clica mais rápido, mas não possui os links do site oficial e os botões relacionados não fazem nada.
+Para usar, baixe a pasta `for use` e execute o aplicativo. Comparado ao original, ele tem todas as funcionalidades principais, clica mais rápido, mas não possui os links do site oficial e os botões relacionados não fazem nadaz.
 
 ## Tecnologias Utilizadas
 - Python
@@ -38,4 +38,8 @@ Obs.: Aprendi muito sobre Tkinter com [este vídeo](https://www.youtube.com/watc
 
 ## Comparativo
 A minha versão é a com a estrela 100% amarela
-(1.png)
+
+![](1.png)
+![](2.png)
+![](3.png)
+![](4.png)
