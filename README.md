@@ -39,7 +39,7 @@ Obs.: Aprendi muito sobre Tkinter com [este vídeo](https://www.youtube.com/watc
 ## Comparativo
 A minha versão é a com a estrela 100% amarela
 
-![](1.png)
-![](2.png)
-![](3.png)
-![](4.png)
+![](img/1.png)
+![](img/2.png)
+![](img/3.png)
+![](img/4.png)
